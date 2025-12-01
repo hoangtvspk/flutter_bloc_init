@@ -7,7 +7,7 @@ import '../network/dio_client.dart';
 
 GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
-  initialLocation: '/home',
+  initialLocation: '/',
   debugLogDiagnostics: true,
   errorBuilder: (context, state) => Scaffold(
     body: Center(
@@ -20,14 +20,14 @@ GoRouter router = GoRouter(
     // Handle deep links with custom scheme
 
     if (state.path == '/') {
-      return '/home';
+      return '/';
     }
 
     return null;
   },
   routes: [
     GoRoute(
-      path: '/home',
+      path: '/',
       builder: (context, state) => const HomeScreen(),
     ),
   ],

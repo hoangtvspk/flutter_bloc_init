@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'core/l10n/app_localizations.dart';
 import 'core/provider/language/language_bloc.dart';
 import 'core/widgets/max_width_container.dart';
-
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'core/router/app_router.dart';
 
 void main() async {
@@ -18,7 +18,7 @@ void main() async {
       String.fromEnvironment('ENVIRONMENT', defaultValue: 'dev');
   await EnvConfig.initialize(environment);
   final prefs = await SharedPreferences.getInstance();
-
+  usePathUrlStrategy();
   runApp(MyApp(prefs: prefs));
 }
 
