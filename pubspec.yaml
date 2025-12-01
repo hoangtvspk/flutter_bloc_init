@@ -104,9 +104,10 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    # Environment files - created by scripts/create-env.sh before build
     - lib/core/config/.env.dev
-    # - lib/core/config/.env.prod
-    # - lib/core/config/.env.staging
+    - lib/core/config/.env.staging
+    - lib/core/config/.env.prod
     # - assets/icons/
     # - assets/fonts/
 
