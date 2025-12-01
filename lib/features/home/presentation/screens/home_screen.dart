@@ -1,3 +1,4 @@
+import 'package:bui_bloc/core/widgets/text/text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       backgroundColor: Colors.transparent,
                       elevation: 0,
                       flexibleSpace: FlexibleSpaceBar(
-                        title: Text(
+                        title: AppText(
                           'BLoC Pattern Demo',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -128,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 size: 24,
               ),
               SizedBox(width: 12),
-              Text(
+              AppText(
                 'Data Status',
                 style: TextStyle(
                   fontSize: 18,
@@ -184,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
         else
           Icon(icon, color: color, size: 20),
         const SizedBox(width: 12),
-        Text(
+        AppText(
           text,
           style: TextStyle(
             color: color,
@@ -218,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Column(
         children: [
-          const Text(
+          const AppText(
             'Counter',
             style: TextStyle(
               fontSize: 16,
@@ -227,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(height: 12),
-          Text(
+          AppText(
             '${state.counter}',
             style: const TextStyle(
               fontSize: 64,
@@ -309,8 +310,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 size: 24,
               ),
               SizedBox(width: 12),
-              Text(
-                'BLoC Features',
+              AppText(
+                'BLoC Featuressss',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -330,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           else if (state.features.isEmpty)
-            const Text(
+            const AppText(
               'No features loaded',
               style: TextStyle(color: Colors.grey),
             )
@@ -350,7 +351,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: Text(
+                      child: AppText(
                         entry.value,
                         style: const TextStyle(
                           fontSize: 15,
@@ -381,7 +382,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          const AppText(
             'Actions',
             style: TextStyle(
               fontSize: 18,
@@ -442,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           : Icon(icon),
-      label: Text(label),
+      label: AppText(label),
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColor.primary,
         foregroundColor: Colors.white,

@@ -95,8 +95,7 @@ build-web-prod:
 
 # Run Web application
 run-web:
-	flutter run -d chrome --dart-define=ENVIRONMENT=$(ENVIRONMENT)
-
+	flutter run -d chrome --dart-define=ENVIRONMENT=$(ENVIRONMENT) 
 run-web-dev:
 	make run-web ENVIRONMENT=dev
 
