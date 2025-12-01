@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
@@ -49,14 +49,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 return CustomScrollView(
                   slivers: [
                     // App Bar
-                    SliverAppBar(
+                    const SliverAppBar(
                       expandedHeight: 120,
                       floating: false,
                       pinned: true,
                       backgroundColor: Colors.transparent,
                       elevation: 0,
                       flexibleSpace: FlexibleSpaceBar(
-                        title: const Text(
+                        title: Text(
                           'BLoC Pattern Demo',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         centerTitle: false,
-                        titlePadding: const EdgeInsets.only(
+                        titlePadding: EdgeInsets.only(
                           left: 20,
                           bottom: 16,
                         ),
@@ -110,25 +110,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppColor.gray.withOpacity(0.6),
+        color: AppColor.gray.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppColor.tertiary.withOpacity(0.3),
+          color: AppColor.tertiary.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             children: [
               Icon(
                 Icons.info_outline,
                 color: AppColor.tertiary,
                 size: 24,
               ),
-              const SizedBox(width: 12),
-              const Text(
+              SizedBox(width: 12),
+              Text(
                 'Data Status',
                 style: TextStyle(
                   fontSize: 18,
@@ -203,14 +203,14 @@ class _HomeScreenState extends State<HomeScreen> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppColor.primary.withOpacity(0.8),
-            AppColor.secondary.withOpacity(0.6),
+            AppColor.primary.withValues(alpha: 0.8),
+            AppColor.secondary.withValues(alpha: 0.6),
           ],
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColor.primary.withOpacity(0.3),
+            color: AppColor.primary.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -272,10 +272,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.white.withValues(alpha: 0.2),
         shape: BoxShape.circle,
         border: Border.all(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.white.withValues(alpha: 0.3),
           width: 2,
         ),
       ),
@@ -291,25 +291,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppColor.gray.withOpacity(0.6),
+        color: AppColor.gray.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppColor.tertiary.withOpacity(0.3),
+          color: AppColor.tertiary.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             children: [
               Icon(
                 Icons.star_outline,
                 color: AppColor.tertiary,
                 size: 24,
               ),
-              const SizedBox(width: 12),
-              const Text(
+              SizedBox(width: 12),
+              Text(
                 'BLoC Features',
                 style: TextStyle(
                   fontSize: 18,
@@ -343,7 +343,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       width: 8,
                       height: 8,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppColor.tertiary,
                         shape: BoxShape.circle,
                       ),
@@ -371,10 +371,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppColor.gray.withOpacity(0.6),
+        color: AppColor.gray.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppColor.tertiary.withOpacity(0.3),
+          color: AppColor.tertiary.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -433,7 +433,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return ElevatedButton.icon(
       onPressed: isLoading ? null : onPressed,
       icon: isLoading
-          ? SizedBox(
+          ? const SizedBox(
               width: 16,
               height: 16,
               child: CircularProgressIndicator(
