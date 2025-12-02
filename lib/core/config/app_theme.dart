@@ -19,14 +19,11 @@ class AppTheme {
         primary: primaryColor,
         secondary: secondaryColor,
         surface: Color(0xFF16213E),
-        background: backgroundColor,
         error: Color(0xFFF87171),
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.white,
-        onBackground: Colors.white,
         onError: Colors.white,
-        surfaceVariant: Color(0xFF0F3460),
         onSurfaceVariant: Color(0xFFE5E7EB),
       ),
       // Inherit from base text theme and override color to white
@@ -104,7 +101,7 @@ class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: primaryColor,
             width: 2,
           ),

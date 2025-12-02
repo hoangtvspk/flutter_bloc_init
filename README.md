@@ -1,172 +1,243 @@
-# 📱 TaskFlow - BLoC Task Manager
+# Bloc with clean architector
 
-A beautiful Flutter template showcasing the **BLoC (Business Logic Component)** pattern with a fully-featured task management application.
+A new Flutter project.
 
-## ✨ Features
+## Getting Started
 
-### 🎯 Task Management
-- ✅ Create, complete, and delete tasks
-- 🏷️ Categorize tasks (Learning, Development, Design, Personal, Work)
-- 🔍 Filter tasks by category
-- 📊 Real-time statistics and progress tracking
+This project is a starting point for a Flutter application.
 
-### 🎨 Rich Animations
-- Smooth page transitions
-- Animated task cards with staggered entrance
-- Interactive buttons with scale and rotation effects
-- Progress bars with animated counters
-- Expandable/collapsible components
-- Swipe-to-delete with animation
+A few resources to get you started if this is your first Flutter project:
 
-### 📚 Built-in Documentation
-- Interactive BLoC pattern documentation
-- Tabbed interface explaining concepts, benefits, and flow
-- Visual flow diagrams
-- Best practices and key features
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-### 🏗️ Architecture Highlights
-- **Clean Architecture**: Separation of concerns with feature-based organization
-- **BLoC Pattern**: Unidirectional data flow with events and states
-- **Freezed**: Immutable state management
-- **Reactive UI**: Stream-based state updates
-- **Modular Widgets**: Each component in its own file for maintainability
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
 
-## 📁 Project Structure
+Remove git locally:
 
-```
-lib/
-├── features/
-│   └── home/
-│       ├── business_logic/
-│       │   ├── home_bloc.dart       # Main BLoC logic
-│       │   ├── home_event.dart      # Events (Add, Delete, Toggle, etc.)
-│       │   └── home_state.dart      # State & Task model
-│       └── presentation/
-│           ├── screens/
-│           │   └── home_screen.dart # Main screen
-│           └── widgets/
-│               ├── task_card.dart              # Individual task item
-│               ├── task_input_card.dart        # Add task form
-│               ├── statistics_card.dart        # Progress & stats
-│               ├── category_filter_chips.dart  # Category filters
-│               └── bloc_documentation_card.dart # BLoC docs
-└── core/
-    ├── config/          # App theme, routes
-    ├── models/          # Status model
-    └── widgets/         # Reusable widgets
-```
+- rm -rf .git
 
-## 🎨 Design Features
+Change package name:
 
-- **Dark Gradient Theme**: Modern dark UI with vibrant purple/blue gradients
-- **Glassmorphism**: Translucent cards with backdrop blur effects
-- **Smooth Animations**: Every interaction is animated for premium feel
-- **Responsive Layout**: Adapts to different screen sizes
-- **Custom Color System**: Category-based color coding
+- dart run change_app_package_name:main com.new.package.name
 
-## 🚀 Getting Started
+Flutter run generate:
 
-### Prerequisites
-- Flutter SDK (3.0+)
-- Dart SDK (3.0+)
-
-### Installation
-
-1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd flutter_bloc
+make build-runner
 ```
 
-2. Install dependencies
+Or manually:
+
+- `flutter pub run build_runner build --delete-conflicting-outputs`
+- `dart run build_runner build --delete-conflicting-outputs`
+
+Change app's icon:
+
+- dart run flutter_launcher_icons
+
+Change native splash:
+
+- flutter pub run flutter_native_splash:create
+
+## Environment Commands
+
+This project uses Makefile for convenient command execution. All commands support three environments: `dev`, `staging`, and `prod`.
+
+### Running the App
+
+Run the app in different environments:
+
 ```bash
-flutter pub get
+# Development
+make run-dev
+
+# Staging
+make run-staging
+
+# Production
+make run-prod
 ```
 
-3. Generate freezed files
+### Building Android APK
+
+Build APK for different environments:
+
 ```bash
-flutter pub run build_runner build --delete-conflicting-outputs
+# Development APK
+make build-android-dev
+
+# Staging APK
+make build-android-staging
+
+# Production APK
+make build-android-prod
 ```
 
-4. Run the app
+### Building Android App Bundle (AAB)
+
+Build App Bundle for Google Play Store:
+
 ```bash
-flutter run
+# Development AAB
+make build-appbundle-dev
+
+# Staging AAB
+make build-appbundle-staging
+
+# Production AAB
+make build-appbundle-prod
 ```
 
-## 🧩 BLoC Pattern Overview
+### Building iOS
 
-This project demonstrates the BLoC pattern with:
+Build iOS Xcode project for different environments:
 
-### Events (Input)
-- `started` - Initialize app and load data
-- `addTask` - Create a new task
-- `toggleTaskCompletion` - Mark task as complete/incomplete
-- `deleteTask` - Remove a task
-- `changeCategory` - Filter tasks by category
-- `refreshData` - Reload data
+```bash
+# Development iOS
+make build-ios-dev
 
-### States (Output)
-- `tasks` - List of all tasks
-- `selectedCategory` - Current filter
-- `features` - BLoC features for documentation
-- `statusLoadData` - Loading state for initial data
-- `statusRefreshData` - Loading state for refresh
-- `statusAddTask` - Loading state for adding tasks
+# Staging iOS
+make build-ios-staging
 
-### BLoC Flow
-```
-UI Event → BLoC → Business Logic → Emit New State → UI Rebuild
+# Production iOS
+make build-ios-prod
 ```
 
-## 🎓 Learning Resources
+### Building iOS IPA
 
-The app includes an **interactive documentation section** with:
-- Overview of BLoC pattern
-- Key benefits and features
-- Step-by-step flow diagram
-- Real-world implementation examples
+Build IPA for App Store / TestFlight:
 
-## 🛠️ Technologies Used
+```bash
+# Development IPA
+make build-ipa-dev
 
-- **Flutter** - UI framework
-- **flutter_bloc** - State management
-- **freezed** - Code generation for immutable classes
-- **freezed_annotation** - Annotations for freezed
-- **dio** - HTTP client
-- Custom animations and transitions
+# Staging IPA
+make build-ipa-staging
 
-## 📱 Screenshots
+# Production IPA
+make build-ipa-prod
+```
 
-The app showcases:
-- Animated splash screen loading
-- Task input with expandable form
-- Category-based filtering
-- Statistics dashboard
-- Interactive documentation
-- Smooth task management
+### Building Web
 
-## 🤝 Contributing
+Build web application for different environments:
 
-This is a template project designed for learning and as a starting point for Flutter applications using BLoC pattern.
+```bash
+# Development Web
+make build-web-dev
 
-Feel free to:
-- Use it as a base for your projects
-- Learn from the code structure
-- Extend it with more features
-- Customize the design
+# Staging Web
+make build-web-staging
 
-## 📄 License
+# Production Web
+make build-web-prod
+```
 
-This project is open source and available for educational purposes.
+#### Running Web Locally
 
-## 👨‍💻 Author
+Run web application in Chrome for development:
 
-Created as a comprehensive Flutter BLoC template with focus on:
-- Clean architecture
-- Best practices
-- Beautiful UI/UX
-- Comprehensive documentation
+```bash
+# Development
+make run-web-dev
 
----
+# Staging
+make run-web-staging
 
-**Happy Coding! 🚀**
+# Production
+make run-web-prod
+```
+
+#### Web Features
+
+- **Custom Splash Screen**: Beautiful gradient splash screen with animated loading dots
+- **Error Handling**: Comprehensive error handling for network issues and loading failures
+- **PWA Support**: Progressive Web App with manifest.json configuration
+- **Responsive Design**: Optimized for desktop and mobile browsers
+- **SEO Optimized**: Meta tags and proper HTML structure
+
+#### Web File Structure
+
+```
+web/
+├── index.html          # Main HTML file with splash screen
+├── splash.css          # Splash screen styles
+├── splash.js           # Splash screen logic and Flutter loader detection
+├── manifest.json       # PWA manifest configuration
+└── icons/              # App icons for PWA
+```
+
+#### Deploying to Vercel
+
+The project includes Vercel configuration for easy deployment:
+
+1. **Build Script**: `scripts/vercel-build.sh` - Builds Flutter web app
+2. **Install Script**: `scripts/vercel-install.sh` - Installs Flutter SDK
+3. **Vercel Config**: `vercel.json` - Routing configuration
+
+To deploy:
+
+```bash
+# Build Command
+chmod +x scripts/vercel-build.sh && ./scripts/vercel-build.sh
+
+# Output Directory
+build/web
+
+# Install Command
+chmod +x scripts/vercel-install.sh && ./scripts/vercel-install.sh
+```
+
+#### Web Customization
+
+**Splash Screen**: Customize the splash screen by editing:
+
+- `web/splash.css` - Styles and animations
+- `web/splash.js` - Loading logic and error handling
+- `web/index.html` - HTML structure
+
+**PWA Settings**: Update `web/manifest.json` for:
+
+- App name and description
+- Theme colors
+- Icons and display mode
+
+## Additional Commands
+
+### Code Quality
+
+```bash
+# Analyze code
+make analyze
+
+# Format code
+make format
+
+# Run tests
+make test
+```
+
+### Clean Build
+
+```bash
+# Clean build artifacts
+make clean
+```
+
+### Release Mode
+
+```bash
+# Run app in release mode (production)
+make run-release
+```
+
+## Notes
+
+- Make sure you have the appropriate environment files (`.env.dev`, `.env.staging`, `.env.prod`) set up in the `lib/core/config` directory before running these commands.
+- All build outputs are located in the `build/` directory:
+  - Android: `build/app/outputs/flutter-apk/` (APK) or `build/app/outputs/bundle/` (AAB)
+  - iOS: `build/ios/` (Xcode project) or `build/ios/ipa/` (IPA)
+  - Web: `build/web/`

@@ -190,26 +190,26 @@ class DioInterceptors {
               final response = await _handleTokenRefresh(error, handler);
               return handler.resolve(response);
             } catch (e) {
-              print('Token refresh failed: $e');
+              debugPrint('Token refresh failed: $e');
               return handler.reject(error);
             }
           }
 
           switch (error.response?.statusCode) {
             case 403:
-              print('Forbidden error: ${error.response?.data}');
+              debugPrint('Forbidden error: ${error.response?.data}');
               break;
             case 404:
-              print('Not found error: ${error.response?.data}');
+              debugPrint('Not found error: ${error.response?.data}');
               break;
             case 500:
-              print('Server error: ${error.response?.data}');
+              debugPrint('Server error: ${error.response?.data}');
               break;
             default:
-              print('Other error status: ${error.response?.statusCode}');
-              print('Error data: ${error.response?.data}');
+              debugPrint('Other error status: ${error.response?.statusCode}');
+              debugPrint('Error data: ${error.response?.data}');
           }
-          print('=== End DioInterceptor Error ===');
+          debugPrint('=== End DioInterceptor Error ===');
           return handler.next(error);
         },
       ),

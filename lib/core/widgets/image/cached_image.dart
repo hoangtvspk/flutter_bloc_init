@@ -44,7 +44,7 @@ class CachedImage extends StatelessWidget {
           color: backgroundColor ??
               Theme.of(context)
                   .colorScheme
-                  .surfaceVariant
+                  .surfaceContainerHighest
                   .withValues(alpha: 0.5),
           borderRadius: borderRadius,
         ),
