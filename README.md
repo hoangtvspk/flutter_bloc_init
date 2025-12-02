@@ -1,4 +1,4 @@
-# 📱 Flutter BLoC Task Manager
+# 📱 TaskFlow - BLoC Task Manager
 
 A beautiful Flutter template showcasing the **BLoC (Business Logic Component)** pattern with a fully-featured task management application.
 
