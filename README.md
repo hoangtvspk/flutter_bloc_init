@@ -15,6 +15,25 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+### Create Environment Files
+
+The project requires environment files for different environments. Run the setup script:
+
+```bash
+# Make the script executable
+chmod +x scripts/create-env.sh
+
+# Create environment files (default: dev)
+./scripts/create-env.sh
+
+# Or specify environment
+ENVIRONMENT=dev ./scripts/create-env.sh
+ENVIRONMENT=staging ./scripts/create-env.sh
+ENVIRONMENT=prod ./scripts/create-env.sh
+```
+
+This will create `.env.dev`, `.env.staging`, and `.env.prod` files in `lib/core/config/` directory.
+
 Remove git locally:
 
 - rm -rf .git
