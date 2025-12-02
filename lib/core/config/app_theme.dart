@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'app_color.dart';
 
 class AppTheme {
   static ThemeData get darkTheme {
     // Get Be Vietnam Pro text theme with proper inheritance
     final baseTextTheme = GoogleFonts.beVietnamProTextTheme();
 
+    // Modern purple/indigo/blue color scheme
+    const primaryColor = Color(0xFF8B5CF6); // Purple
+    const secondaryColor = Color(0xFF6366F1); // Indigo
+    const backgroundColor = Color(0xFF1A1A2E); // Deep navy
+
     return ThemeData(
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: AppColor.brownDark,
+      scaffoldBackgroundColor: backgroundColor,
+      primaryColor: primaryColor,
+      colorScheme: const ColorScheme.dark(
+        primary: primaryColor,
+        secondary: secondaryColor,
+        surface: Color(0xFF16213E),
+        background: backgroundColor,
+        error: Color(0xFFF87171),
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
+        onSurface: Colors.white,
+        onBackground: Colors.white,
+        onError: Colors.white,
+        surfaceVariant: Color(0xFF0F3460),
+        onSurfaceVariant: Color(0xFFE5E7EB),
+      ),
       // Inherit from base text theme and override color to white
       textTheme: baseTextTheme.copyWith(
         bodyLarge: baseTextTheme.bodyLarge?.copyWith(color: Colors.white),
@@ -31,6 +50,65 @@ class AppTheme {
         labelLarge: baseTextTheme.labelLarge?.copyWith(color: Colors.white),
         labelMedium: baseTextTheme.labelMedium?.copyWith(color: Colors.white),
         labelSmall: baseTextTheme.labelSmall?.copyWith(color: Colors.white),
+      ),
+      // AppBar theme
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.white),
+        titleTextStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      // Card theme
+      cardTheme: CardThemeData(
+        color: Colors.white.withValues(alpha: 0.1),
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(
+            color: primaryColor.withValues(alpha: 0.3),
+            width: 1,
+          ),
+        ),
+      ),
+      // Elevated button theme
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: Colors.white,
+          elevation: 4,
+          shadowColor: primaryColor.withValues(alpha: 0.4),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+      // Input decoration theme
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white.withValues(alpha: 0.1),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: primaryColor.withValues(alpha: 0.3),
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: primaryColor.withValues(alpha: 0.3),
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: primaryColor,
+            width: 2,
+          ),
+        ),
       ),
     );
   }

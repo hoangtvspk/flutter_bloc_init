@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bui_bloc/core/config/env_config.dart';
@@ -13,7 +14,13 @@ import 'core/router/app_router.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  // Only preserve splash screen on mobile platforms (iOS/Android)
+  // On web, splash screen is handled via HTML/CSS
+  if (!kIsWeb) {
+    FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  }
+
   const environment =
       String.fromEnvironment('ENVIRONMENT', defaultValue: 'dev');
   await EnvConfig.initialize(environment);
@@ -43,7 +50,7 @@ class MyApp extends StatelessWidget {
               child: MaterialApp.router(
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.darkTheme,
-                color: const Color(0xFFE8DAB8),
+                color: const Color(0xFF8B5CF6),
                 routerConfig: router,
                 localizationsDelegates: const [
                   AppLocalizations.delegate,
